@@ -1,6 +1,6 @@
 app_title: Library App
 
-language: "Lang: {language}"
+language: "Lang: {language}; Country: {country}"
 
 main_screen:
   greetings: Hello, {username}!
@@ -10,7 +10,7 @@ main_screen:
       zero: There are no new books available at the moment :(
       one: There is {howMany} new book available :)
       other: There are {howMany} new books available :)
-  today_date_format: MM/dd/yyyy
+  today_date_format: dd/MM/yyyy
   welcome: |
     Welcome to our library!
 
@@ -21,7 +21,7 @@ author:
   female: "{name} - she is the author of that book!"
   other: "{name} - they are the author of that book!"
 
-privacy_policy_url: https://library.app/privacy_us.pdf
+privacy_policy_url: https://library.app/privacy_ca.pdf
 
 employees:
   "0": John Smith

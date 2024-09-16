@@ -1,5 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:localization/localization.dart';
 
 Future<void> main() async {
@@ -18,7 +18,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale? localeOverride;
 
-  void onLocaleSwitched(Locale locale) => setState(() => localeOverride = locale);
+  void onLocaleSwitched(Locale locale) {
+    setState(() => localeOverride = locale);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +51,8 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   late Locale selectedLocale = Localizations.localeOf(context);
   int booksAmount = 0;
+
+  void syncLocaleWithSystem() => selectedLocale = Localizations.localeOf(context);
 
   Gender pickGender() => switch (booksAmount % 3) {
         0 => Gender.male,
@@ -100,11 +104,9 @@ class HomeState extends State<Home> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      selectedLocale = Localizations.localeOf(context);
-    });
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    syncLocaleWithSystem();
   }
 
   @override

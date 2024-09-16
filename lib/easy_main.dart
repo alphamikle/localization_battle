@@ -19,7 +19,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale? localeOverride;
 
-  void onLocaleSwitched(Locale locale) => setState(() => localeOverride = locale);
+  Future<void> onLocaleSwitched(BuildContext context, Locale locale) async {
+    await context.setLocale(locale);
+    setState(() => localeOverride = locale);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +42,7 @@ class _MyAppState extends State<MyApp> {
           supportedLocales: context.supportedLocales,
           locale: localeOverride ?? context.locale,
           home: Home(
-            onLocaleSwitched: onLocaleSwitched,
+            onLocaleSwitched: (Locale locale) => onLocaleSwitched(context, locale),
           ),
         ),
       ),
@@ -62,6 +65,8 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   late Locale selectedLocale = context.locale;
   int booksAmount = 0;
+
+  void syncLocaleWithSystem() => selectedLocale = Localizations.localeOf(context);
 
   String pickGender() => switch (booksAmount % 3) {
         0 => 'male',
@@ -113,11 +118,9 @@ class HomeState extends State<Home> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      selectedLocale = Localizations.localeOf(context);
-    });
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    syncLocaleWithSystem();
   }
 
   List<String> get employees {
