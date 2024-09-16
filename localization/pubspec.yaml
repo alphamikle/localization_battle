@@ -1,0 +1,16 @@
+# Generated with easiest_localization: https://pub.dev/packages/easiest_localization
+name: localization
+description: Generated localization package
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  easiest_localization: 
+    path: ../../locy
