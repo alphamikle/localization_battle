@@ -1,9 +1,22 @@
+import 'package:easiest_localization/easiest_localization.dart';
+import 'package:easiest_remote_localization/easiest_remote_localization.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:el_comparison/easiest/remote_sources_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:localization/localization.dart';
 
+late final List<CDNSource> remoteSources;
+
+late final List<LocalizationProvider<LocalizationMessages>> remoteProviders = [
+  CDNLocalizationProvider<LocalizationMessages>(
+    sources: remoteSources,
+    factory: (CDNSource source, Json content) => LocalizationMessages.fromJson(content),
+  ),
+];
+
 Future<void> main() async {
+  remoteSources = await RemoteSourcesService().fetchSources();
   runApp(const MyApp());
 }
 
@@ -27,8 +40,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateTitle: (BuildContext context) => el.appTitle,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: supportedLocales,
+      localizationsDelegates: localizationsDelegatesWithProviders(remoteProviders),
+      supportedLocales: supportedLocalesWithProviders(remoteProviders),
       locale: localeOverride,
       home: Home(
         onLocaleSwitched: onLocaleSwitched,
@@ -80,7 +93,7 @@ class HomeState extends State<Home> {
   }
 
   ButtonSegment<Locale> segmentBuilder(BuildContext context, int index) {
-    final Locale locale = supportedLocales[index];
+    final Locale locale = Set.from(supportedLocalesWithProviders(remoteProviders)).toList()[index];
 
     return ButtonSegment(
       value: locale,
@@ -137,11 +150,14 @@ class HomeState extends State<Home> {
           ),
           ...text(el.language(language: selectedLocale.languageCode, country: selectedLocale.countryCode ?? '')),
           ...text(el.source),
-          SegmentedButton<Locale>(
-            segments: List.generate(supportedLocales.length, (int index) => segmentBuilder(context, index)),
-            selected: {selectedLocale},
-            onSelectionChanged: switchLanguage,
-            emptySelectionAllowed: true,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SegmentedButton<Locale>(
+              segments: List.generate(Set.from(supportedLocalesWithProviders(remoteProviders)).length, (int index) => segmentBuilder(context, index)),
+              selected: {selectedLocale},
+              onSelectionChanged: switchLanguage,
+              emptySelectionAllowed: true,
+            ),
           ),
         ],
       ),

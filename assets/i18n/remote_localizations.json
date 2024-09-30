@@ -1,0 +1,22 @@
+[
+  {
+    "locale": "en",
+    "path": "https://indieloper.b-cdn.net/easiest_localization/en.json"
+  },
+  {
+    "locale": "en_CA",
+    "path": "https://indieloper.b-cdn.net/easiest_localization/en_CA.json"
+  },
+  {
+    "locale": "es",
+    "path": "https://indieloper.b-cdn.net/easiest_localization/es.json"
+  },
+  {
+    "locale": "ru",
+    "path": "https://indieloper.b-cdn.net/easiest_localization/ru.json"
+  },
+  {
+    "locale": "fr",
+    "path": "https://indieloper.b-cdn.net/easiest_localization/fr.json"
+  }
+]

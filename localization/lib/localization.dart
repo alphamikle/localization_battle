@@ -206,6 +206,7 @@ class LocalizationMessages {
     required this.author,
     required this.privacyPolicyUrl,
     required this.employees,
+    required this.source,
   });
   factory LocalizationMessages.fromJson(Map<String, dynamic> json) {
     return LocalizationMessages(
@@ -229,6 +230,7 @@ class LocalizationMessages {
       ),
       privacyPolicyUrl: (json['privacy_policy_url'] ?? '').toString(),
       employees: Employees.fromJson((json['employees'] as Map).cast<String, dynamic>()),
+      source: (json['source'] ?? '').toString(),
     );
   }
   final String appTitle;
@@ -241,6 +243,7 @@ class LocalizationMessages {
   final String privacyPolicyUrl;
   final Employees employees;
 
+  final String source;
   Map<String, Object> get _content => {
         r'''app_title''': appTitle,
         r'''language''': language,
@@ -248,6 +251,7 @@ class LocalizationMessages {
         r'''author''': author,
         r'''privacy_policy_url''': privacyPolicyUrl,
         r'''employees''': employees,
+        r'''source''': source,
       };
   T getContent<T>(String key) {
     final Object? value = _content[key];
@@ -317,6 +321,7 @@ final LocalizationMessages en = LocalizationMessages(
     n3: 'Emma Davis',
     n4: 'William Taylor',
   ),
+  source: 'Easiest Localization',
 );
 final LocalizationMessages ru = LocalizationMessages(
   appTitle: 'Библиотека',
@@ -337,7 +342,7 @@ final LocalizationMessages ru = LocalizationMessages(
         precision: precision,
       ),
     ),
-    todayDateFormat: 'DD MMM yyyy',
+    todayDateFormat: 'dd MMM yyyy',
     welcome: '''# Добро пожаловать в нашу библиотеку!
 ---
 ## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.
@@ -358,6 +363,7 @@ final LocalizationMessages ru = LocalizationMessages(
     n3: 'Эмма Дэвис',
     n4: 'Уильям Тейлор',
   ),
+  source: 'Easiest Localization',
 );
 final LocalizationMessages es = LocalizationMessages(
   appTitle: 'Aplicación de Biblioteca',
@@ -399,6 +405,7 @@ final LocalizationMessages es = LocalizationMessages(
     n3: 'Emma Davis',
     n4: 'Guillermo Taylor',
   ),
+  source: 'Easiest Localization',
 );
 final LocalizationMessages en_CA = LocalizationMessages(
   appTitle: 'Library App',
@@ -440,6 +447,7 @@ final LocalizationMessages en_CA = LocalizationMessages(
     n3: 'Emma Davis',
     n4: 'William Taylor',
   ),
+  source: 'Easiest Localization',
 );
 final Map<Locale, LocalizationMessages> _languageMap = {
   Locale('en'): en,

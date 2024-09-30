@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
+  "source": "Flutter Localizations",
   "appTitle": "Library App",
   "language": "Lang: {language}",
   "@language": {

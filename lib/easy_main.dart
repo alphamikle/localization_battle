@@ -157,6 +157,8 @@ class HomeState extends State<Home> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          ...text('language'.tr(namedArgs: {'language': context.locale.languageCode, 'country': context.locale.countryCode ?? ''})),
+          ...text('source'.tr()),
           SegmentedButton<Locale>(
             segments: List.generate(context.supportedLocales.length, (int index) => segmentBuilder(context, index)),
             selected: {selectedLocale},

@@ -9,10 +9,13 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get source => 'Flutter Localizations';
+
+  @override
   String get appTitle => 'Library App';
 
   @override
-  String language({required String language}) {
+  String language({required String language, required Object country}) {
     return 'Lang: $language';
   }
 
@@ -79,11 +82,14 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   AppLocalizationsEnCa(): super('en_CA');
 
   @override
+  String get source => 'Flutter Localizations';
+
+  @override
   String get appTitle => 'Library App';
 
   @override
-  String language({required String language}) {
-    return 'Lang: $language';
+  String language({required String language, required Object country}) {
+    return 'Lang: \$$language; Country: \$$country';
   }
 
   @override

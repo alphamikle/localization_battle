@@ -98,6 +98,12 @@ abstract class AppLocalizations {
     Locale('ru')
   ];
 
+  /// No description provided for @source.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Localizations'**
+  String get source;
+
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
@@ -108,7 +114,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Lang: {language}'**
-  String language({required String language});
+  String language({required String language, required Object country});
 
   /// No description provided for @mainScreenGreetings.
   ///

@@ -9,10 +9,13 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
+  String get source => 'Flutter Localizations';
+
+  @override
   String get appTitle => 'Aplicación de Biblioteca';
 
   @override
-  String language({required String language}) {
+  String language({required String language, required Object country}) {
     return 'Idioma: $language';
   }
 

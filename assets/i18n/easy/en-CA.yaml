@@ -1,3 +1,5 @@
+source: Easy Localization
+
 app_title: Library App
 
 language: "Lang: {language}; Country: {country}"

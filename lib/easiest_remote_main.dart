@@ -1,3 +1,5 @@
+import 'package:easiest_localization/easiest_localization.dart';
+import 'package:easiest_remote_localization/easiest_remote_localization.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -17,6 +19,34 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  late final List<LocalizationProvider<LocalizationMessages>> remoteProviders = [
+    CDNLocalizationProvider<LocalizationMessages>(
+      sources: [
+        CDNSource(
+          locale: Locale('en'),
+          path: 'https://indieloper.b-cdn.net/easiest_localization/en.json',
+          type: SourceType.json,
+        ),
+        CDNSource(
+          locale: Locale('en', 'CA'),
+          path: 'https://indieloper.b-cdn.net/easiest_localization/en_CA.json',
+          type: SourceType.json,
+        ),
+        CDNSource(
+          locale: Locale('es'),
+          path: 'https://indieloper.b-cdn.net/easiest_localization/es.json',
+          type: SourceType.json,
+        ),
+        CDNSource(
+          locale: Locale('ru'),
+          path: 'https://indieloper.b-cdn.net/easiest_localization/ru.json',
+          type: SourceType.json,
+        ),
+      ],
+      factory: (CDNSource source, Json content) => LocalizationMessages.fromJson(content),
+    ),
+  ];
+
   Locale? localeOverride;
 
   void onLocaleSwitched(Locale locale) {
@@ -27,8 +57,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateTitle: (BuildContext context) => el.appTitle,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: supportedLocales,
+      localizationsDelegates: localizationsDelegatesWithProviders(remoteProviders),
+      supportedLocales: supportedLocalesWithProviders(remoteProviders),
       locale: localeOverride,
       home: Home(
         onLocaleSwitched: onLocaleSwitched,

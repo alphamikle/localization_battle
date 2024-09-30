@@ -10,12 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_markdown: ^0.7.3+2
+  intl: ^0.19.0
+  dio: ^5.7.0
 
   # @ "Default localization approach"
   flutter_localizations:
     sdk: flutter
-
-  intl: ^0.19.0
 
   # @ Easiest localization
   easiest_localization:
@@ -41,6 +41,7 @@ flutter:
     - assets/
     - assets/i18n/
     - assets/i18n/easy/
+    - assets/i18n/easy_json/
     - assets/i18n/easiest/
     - assets/i18n/flutter_localizations/
 
@@ -56,6 +57,8 @@ easiest_localization:
   excluded:
     - "/easy/"
     - "/flutter_localizations/"
+    - "/easy_json/"
+    - "fr.json"
   class_name: LocalizationMessages
   description: Generated localization package
   easiest_localization_version: "\n    path: ../../locy"

@@ -1,10 +1,14 @@
 {
   "@@locale": "en_CA",
+  "source": "Flutter Localizations",
   "appTitle": "Library App",
-  "language": "Lang: {language}",
+  "language": "Lang: ${language}; Country: ${country}",
   "@language": {
     "placeholders": {
       "language": {
+        "type": "String"
+      },
+      "country": {
         "type": "String"
       }
     }
