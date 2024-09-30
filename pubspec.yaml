@@ -9,7 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  flutter_markdown: ^0.7.3+2
+
+  # @ "Default localization approach"
+  flutter_localizations:
+    sdk: flutter
+
   intl: ^0.19.0
 
   # @ Easiest localization
@@ -27,19 +32,30 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/
     - assets/i18n/
     - assets/i18n/easy/
     - assets/i18n/easiest/
+    - assets/i18n/flutter_localizations/
+
+
+localization:
+  arb-dir: ./assets/i18n/flutter_localizations/
+  template-arb-file: app_en.arb
+  output-dir: ./lib/flutter_localizations/
+  output-localization-file: flutter_localizations.dart
+  use-named-parameters: true
 
 easiest_localization:
   excluded:
     - "/easy/"
+    - "/flutter_localizations/"
   class_name: LocalizationMessages
   description: Generated localization package
   easiest_localization_version: "\n    path: ../../locy"

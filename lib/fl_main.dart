@@ -1,10 +1,10 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:easy_localization_loader/easy_localization_loader.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
+import 'flutter_localizations/flutter_localizations.dart';
+
 Future<void> main() async {
-  await EasyLocalization.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -21,30 +21,19 @@ class _MyAppState extends State<MyApp> {
   Locale? localeOverride;
 
   Future<void> onLocaleSwitched(BuildContext context, Locale locale) async {
-    await context.setLocale(locale);
     setState(() => localeOverride = locale);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyLocalization(
-      supportedLocales: const [
-        Locale('en'),
-        Locale('es'),
-        Locale('ru'),
-        Locale('en', 'CA'),
-      ],
-      path: 'assets/i18n/easy',
-      assetLoader: const YamlAssetLoader(),
-      child: Builder(
-        builder: (BuildContext context) => MaterialApp(
-          onGenerateTitle: (BuildContext context) => 'app_title'.tr(),
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: localeOverride ?? context.locale,
-          home: Home(
-            onLocaleSwitched: (Locale locale) => onLocaleSwitched(context, locale),
-          ),
+    return Builder(
+      builder: (BuildContext context) => MaterialApp(
+        onGenerateTitle: (BuildContext context) => context.loc.appTitle,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: localeOverride,
+        home: Home(
+          onLocaleSwitched: (Locale locale) => onLocaleSwitched(context, locale),
         ),
       ),
     );
@@ -64,7 +53,7 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  late Locale selectedLocale = context.locale;
+  late Locale selectedLocale = Localizations.localeOf(context);
   int booksAmount = 0;
 
   void syncLocaleWithSystem() => selectedLocale = Localizations.localeOf(context);
@@ -94,7 +83,7 @@ class HomeState extends State<Home> {
   }
 
   ButtonSegment<Locale> segmentBuilder(BuildContext context, int index) {
-    final Locale locale = context.supportedLocales[index];
+    final Locale locale = AppLocalizations.supportedLocales[index];
 
     return ButtonSegment(
       value: locale,
@@ -128,11 +117,13 @@ class HomeState extends State<Home> {
   }
 
   List<String> get employees {
-    return List.generate(
-      // This number will be always hardcoded
-      5,
-      (int index) => 'employees.$index'.tr(),
-    );
+    return [
+      context.loc.employees0,
+      context.loc.employees1,
+      context.loc.employees2,
+      context.loc.employees3,
+      context.loc.employees4,
+    ];
   }
 
   @override
@@ -140,26 +131,28 @@ class HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('main_screen.greetings'.tr(namedArgs: {'username': pickName()})),
+        title: Text(context.loc.mainScreenGreetings(username: pickName())),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          ...text(DateFormat('main_screen.today_date_format'.tr()).format(DateTime.now())),
-          ...text('main_screen.welcome'.tr(), md: true),
-          ...text('author'.tr(namedArgs: {'name': pickName()}, gender: pickGender())),
-          ...text('privacy_policy_url'.tr()),
+          ...text(DateFormat(context.loc.mainScreenBooksTodayDateFormat).format(DateTime.now())),
+          ...text(context.loc.mainScreenBooksWelcome, md: true),
+          ...text(context.loc.author(name: pickName(), gender: pickGender())),
+          ...text(context.loc.privacyPolicyUrl),
           for (final String employee in employees) ...text(employee),
           ...text(
-            'main_screen.books.amount_of_new'.plural(booksAmount, name: 'howMany'),
+            context.loc.mainScreenBooksAmountOfNew(howMany: booksAmount),
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
           SegmentedButton<Locale>(
-            segments: List.generate(context.supportedLocales.length, (int index) => segmentBuilder(context, index)),
-            selected: {selectedLocale},
+            segments: List.generate(AppLocalizations.supportedLocales.length, (int index) => segmentBuilder(context, index)),
+            selected: {
+              selectedLocale,
+            },
             onSelectionChanged: switchLanguage,
             emptySelectionAllowed: true,
           ),
@@ -167,9 +160,13 @@ class HomeState extends State<Home> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: addBook,
-        tooltip: 'main_screen.books.add'.tr(),
+        tooltip: context.loc.mainScreenBooksAdd,
         child: const Icon(Icons.add),
       ),
     );
   }
+}
+
+extension LocalizedContext on BuildContext {
+  AppLocalizations get loc => AppLocalizations.of(this)!;
 }

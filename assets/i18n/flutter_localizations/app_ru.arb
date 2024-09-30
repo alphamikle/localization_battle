@@ -1,0 +1,45 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Библиотека",
+  "language": "Язык: {language}",
+  "@language": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "mainScreenGreetings": "Привет, {username}!",
+  "@mainScreenGreetings": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "mainScreenBooksAdd": "Добавить книгу",
+  "mainScreenBooksAmountOfNew": "{howMany, plural, zero{В настоящий момент доступных новых книг нет :(} one{В настоящий момент доступна {howMany} новая книга :)} two{В настоящий момент доступны {howMany} новые книги :)} few{В настоящий момент доступно {howMany} новые книги :)} many{В настоящий момент доступно {howMany} новых книг :)} other{В настоящий момент доступно {howMany} новые книги :)}}",
+  "@mainScreenBooksAmountOfNew": {
+    "placeholders": {
+      "howMany": {
+        "type": "int"
+      }
+    }
+  },
+  "mainScreenBooksTodayDateFormat": "dd MMM yyyy",
+  "mainScreenBooksWelcome": "# Добро пожаловать в нашу библиотеку!\n---\n## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.",
+  "author": "{gender, select, male{{name} - он автор этой книги!} female{{name} - она автор этой книги!} other{{name} - автор этой книги!}}",
+  "@author": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyPolicyUrl": "https://library.app/privacy_ru.pdf",
+  "employees0": "Джон Смит",
+  "employees1": "Алиса Джонсон",
+  "employees2": "Майкл Браун",
+  "employees3": "Эмма Дэвис",
+  "employees4": "Уильям Тейлор"
+}

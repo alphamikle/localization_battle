@@ -1,0 +1,45 @@
+{
+  "@@locale": "en_CA",
+  "appTitle": "Library App",
+  "language": "Lang: {language}",
+  "@language": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "mainScreenGreetings": "Hello, {username}",
+  "@mainScreenGreetings": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "mainScreenBooksAdd": "Add Book",
+  "mainScreenBooksAmountOfNew": "{howMany, plural, zero{There are no new books available at the moment :(} one{There is {howMany} new book available :)} other{There are {howMany} new books available :)}}",
+  "@mainScreenBooksAmountOfNew": {
+    "placeholders": {
+      "howMany": {
+        "type": "int"
+      }
+    }
+  },
+  "mainScreenBooksTodayDateFormat": "dd/MM/yyyy",
+  "mainScreenBooksWelcome": "# Welcome to our library!\n---\n## We are very happy to see you and would like you to enjoy reading our books.",
+  "author": "{gender, select, male{{name} - he is the author of that book!} female{{name} - she is the author of that book!} other{{name} - they are the author of that book!}}",
+  "@author": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyPolicyUrl": "https://library.app/privacy_ca.pdf",
+  "employees0": "John Smith",
+  "employees1": "Alice Johnson",
+  "employees2": "Michael Brown",
+  "employees3": "Emma Davis",
+  "employees4": "William Taylor"
+}

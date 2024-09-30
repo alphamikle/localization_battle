@@ -1,0 +1,7 @@
+arb-dir: ./assets/i18n/flutter_localizations/
+output-dir: ./lib/flutter_localizations/
+output-localization-file: flutter_localizations.dart
+template-arb-file: app_en.arb
+use-named-parameters: true
+synthetic-package: false
+untranslated-messages-file: missing_translations.json

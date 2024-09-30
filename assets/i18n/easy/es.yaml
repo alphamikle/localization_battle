@@ -12,9 +12,9 @@ main_screen:
       other: Hay {howMany} libros nuevos disponibles :)
   today_date_format: dd/MM/yyyy
   welcome: |
-    ¡Bienvenido a nuestra biblioteca!
-
-    Estamos muy contentos de verte y nos gustaría que disfrutes leyendo nuestros libros.
+    # ¡Bienvenido a nuestra biblioteca!
+    ---
+    ## Estamos muy contentos de verte y nos gustaría que disfrutes leyendo nuestros libros.
 
 author:
   male: ¡{name} es el autor de ese libro!

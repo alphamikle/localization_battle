@@ -297,9 +297,9 @@ final LocalizationMessages en = LocalizationMessages(
       ),
     ),
     todayDateFormat: 'MM/dd/yyyy',
-    welcome: '''Welcome to our library!
-
-We are very happy to see you and would like you to enjoy reading our books.
+    welcome: '''# Welcome to our library!
+---
+## We are very happy to see you and would like you to enjoy reading our books.
 ''',
   ),
   author: (Gender gender, {required String name}) => Intl.gender(
@@ -338,9 +338,9 @@ final LocalizationMessages ru = LocalizationMessages(
       ),
     ),
     todayDateFormat: 'DD MMM yyyy',
-    welcome: '''Добро пожаловать в нашу библиотеку!
-
-Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.
+    welcome: '''# Добро пожаловать в нашу библиотеку!
+---
+## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.
 ''',
   ),
   author: (Gender gender, {required String name}) => Intl.gender(
@@ -379,9 +379,9 @@ final LocalizationMessages es = LocalizationMessages(
       ),
     ),
     todayDateFormat: 'dd/MM/yyyy',
-    welcome: '''¡Bienvenido a nuestra biblioteca!
-
-Estamos muy contentos de verte y nos gustaría que disfrutes leyendo nuestros libros.
+    welcome: '''# ¡Bienvenido a nuestra biblioteca!
+---
+## Estamos muy contentos de verte y nos gustaría que disfrutes leyendo nuestros libros.
 ''',
   ),
   author: (Gender gender, {required String name}) => Intl.gender(
@@ -420,9 +420,9 @@ final LocalizationMessages en_CA = LocalizationMessages(
       ),
     ),
     todayDateFormat: 'dd/MM/yyyy',
-    welcome: '''Welcome to our library!
-
-We are very happy to see you and would like you to enjoy reading our books.
+    welcome: '''# Welcome to our library!
+---
+## We are very happy to see you and would like you to enjoy reading our books.
 ''',
   ),
   author: (Gender gender, {required String name}) => Intl.gender(

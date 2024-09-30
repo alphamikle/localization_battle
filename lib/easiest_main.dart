@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:localization/localization.dart';
 
 Future<void> main() async {
@@ -93,12 +94,15 @@ class HomeState extends State<Home> {
     String text, {
     bool last = false,
     TextStyle? style,
+    bool md = false,
   }) {
     return [
-      Text(
-        text,
-        style: style,
-      ),
+      md
+          ? MarkdownBody(data: text)
+          : Text(
+              text,
+              style: style,
+            ),
       if (last != true) const Divider(),
     ];
   }
@@ -120,7 +124,7 @@ class HomeState extends State<Home> {
         padding: const EdgeInsets.all(16),
         children: [
           ...text(DateFormat(el.mainScreen.todayDateFormat).format(DateTime.now())),
-          ...text(el.mainScreen.welcome),
+          ...text(el.mainScreen.welcome, md: true),
           ...text(el.author(pickGender(), name: pickName())),
           ...text(el.privacyPolicyUrl),
           for (final Object employee in el.employees.contentList) ...text(employee.toString()),

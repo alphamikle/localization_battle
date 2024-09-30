@@ -1,0 +1,45 @@
+{
+  "@@locale": "es",
+  "appTitle": "Aplicación de Biblioteca",
+  "language": "Idioma: {language}",
+  "@language": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "mainScreenGreetings": "¡Hola, {username}!",
+  "@mainScreenGreetings": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "mainScreenBooksAdd": "Añadir libro",
+  "mainScreenBooksAmountOfNew": "{howMany, plural, zero{No hay libros nuevos disponibles en este momento :(} one{Hay {howMany} libro nuevo disponible :)} other{Hay {howMany} libros nuevos disponibles :)}}",
+  "@mainScreenBooksAmountOfNew": {
+    "placeholders": {
+      "howMany": {
+        "type": "int"
+      }
+    }
+  },
+  "mainScreenBooksTodayDateFormat": "dd/MM/yyyy",
+  "mainScreenBooksWelcome": "# ¡Bienvenido a nuestra biblioteca!\n---\n## Estamos muy contentos de verte y nos gustaría que disfrutes leyendo nuestros libros.",
+  "author": "{gender, select, male{¡{name} es el autor de ese libro!} female{¡{name} es la autora de ese libro!} other{¡{name} es el autor de ese libro!}}",
+  "@author": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyPolicyUrl": "https://library.app/privacy_mx.pdf",
+  "employees0": "Juan Smith",
+  "employees1": "Alicia Johnson",
+  "employees2": "Miguel Brown",
+  "employees3": "Emma Davis",
+  "employees4": "Guillermo Taylor"
+}
