@@ -42,23 +42,18 @@ flutter:
     - assets/i18n/
     - assets/i18n/easy/
     - assets/i18n/easy_json/
+    - assets/i18n/easy_remote_json/
     - assets/i18n/easiest/
     - assets/i18n/flutter_localizations/
-
-
-localization:
-  arb-dir: ./assets/i18n/flutter_localizations/
-  template-arb-file: app_en.arb
-  output-dir: ./lib/flutter_localizations/
-  output-localization-file: flutter_localizations.dart
-  use-named-parameters: true
 
 easiest_localization:
   excluded:
     - "/easy/"
-    - "/flutter_localizations/"
     - "/easy_json/"
+    - "/easy_remote_json/"
+    - "/flutter_localizations/"
     - "fr.json"
+    - "remote_localizations.json"
   class_name: LocalizationMessages
   description: Generated localization package
   easiest_localization_version: "\n    path: ../../locy"

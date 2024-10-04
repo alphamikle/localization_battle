@@ -46,7 +46,7 @@ class CodegenLoader extends AssetLoader{
     "3": "Эмма Дэвис",
     "4": "Уильям Тейлор"
   },
-  "source": "Easiest Localization"
+  "source": "Generated Easiest Localization"
 };
 static const Map<String,dynamic> en_CA = {
   "app_title": "Library App",
@@ -80,7 +80,7 @@ static const Map<String,dynamic> en_CA = {
     "3": "Emma Davis",
     "4": "William Taylor"
   },
-  "source": "Easiest Localization"
+  "source": "Generated Easiest Localization"
 };
 static const Map<String,dynamic> en = {
   "app_title": "Library App",
@@ -114,7 +114,7 @@ static const Map<String,dynamic> en = {
     "3": "Emma Davis",
     "4": "William Taylor"
   },
-  "source": "Easiest Localization"
+  "source": "Generated Easiest Localization"
 };
 static const Map<String,dynamic> es = {
   "app_title": "Aplicación de Biblioteca",
@@ -148,7 +148,7 @@ static const Map<String,dynamic> es = {
     "3": "Emma Davis",
     "4": "Guillermo Taylor"
   },
-  "source": "Easiest Localization"
+  "source": "Generated Easiest Localization"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "en_CA": en_CA, "en": en, "es": es};
 }
