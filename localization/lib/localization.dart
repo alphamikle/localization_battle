@@ -84,7 +84,7 @@ class MainScreenBooks {
   factory MainScreenBooks.fromJson(Map<String, dynamic> json) {
     return MainScreenBooks(
       add: (json['add'] ?? '').toString(),
-      amountOfNew: (int howMany, {int? precision}) => Intl.plural(
+      amountOfNew: (num howMany, {int? precision}) => Intl.plural(
         howMany,
         name: 'amount_of_new',
         zero: json['amount_of_new']['zero'] == null || json['amount_of_new']['zero'].toString().trim() == ''
@@ -107,7 +107,7 @@ class MainScreenBooks {
   }
   final String add;
 
-  final String Function(int howMany, {int? precision}) amountOfNew;
+  final String Function(num howMany, {int? precision}) amountOfNew;
 
   Map<String, Object> get _content => {
         r'''add''': add,
@@ -288,7 +288,7 @@ final LocalizationMessages en = LocalizationMessages(
     greetings: ({required String username}) => '''Hello, ${username}!''',
     books: MainScreenBooks(
       add: 'Add Book',
-      amountOfNew: (int howMany, {int? precision}) => Intl.plural(
+      amountOfNew: (num howMany, {int? precision}) => Intl.plural(
         howMany,
         name: 'amount_of_new',
         zero: 'There are no new books available at the moment :(',
@@ -330,7 +330,7 @@ final LocalizationMessages ru = LocalizationMessages(
     greetings: ({required String username}) => '''Привет, ${username}!''',
     books: MainScreenBooks(
       add: 'Добавить книгу',
-      amountOfNew: (int howMany, {int? precision}) => Intl.plural(
+      amountOfNew: (num howMany, {int? precision}) => Intl.plural(
         howMany,
         name: 'amount_of_new',
         zero: 'В настоящий момент доступных новых книг нет :(',
@@ -372,7 +372,7 @@ final LocalizationMessages es = LocalizationMessages(
     greetings: ({required String username}) => '''¡Hola, ${username}!''',
     books: MainScreenBooks(
       add: 'Añadir libro',
-      amountOfNew: (int howMany, {int? precision}) => Intl.plural(
+      amountOfNew: (num howMany, {int? precision}) => Intl.plural(
         howMany,
         name: 'amount_of_new',
         zero: 'No hay libros nuevos disponibles en este momento :(',
@@ -414,7 +414,7 @@ final LocalizationMessages en_CA = LocalizationMessages(
     greetings: ({required String username}) => '''Hello, ${username}!''',
     books: MainScreenBooks(
       add: 'Add Book',
-      amountOfNew: (int howMany, {int? precision}) => Intl.plural(
+      amountOfNew: (num howMany, {int? precision}) => Intl.plural(
         howMany,
         name: 'amount_of_new',
         zero: 'There are no new books available at the moment :(',
