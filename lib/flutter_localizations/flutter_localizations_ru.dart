@@ -46,7 +46,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get mainScreenBooksTodayDateFormat => 'dd MMM yyyy';
 
   @override
-  String get mainScreenBooksWelcome => '# Добро пожаловать в нашу библиотеку!\n---\n## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.';
+  String get mainScreenBooksWelcome =>
+      '# Добро пожаловать в нашу библиотеку!\n---\n## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.';
 
   @override
   String author({required String name, required String gender}) {

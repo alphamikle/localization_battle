@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'easy/easy_main.dart' as easy;
-import 'easy/easy_codegen_main.dart' as easy_gen;
-import 'easy/easy_remote_main.dart' as easy_remote;
 import 'easiest/easiest_main.dart' as easiest;
 import 'easiest/easiest_remote_main.dart' as easiest_remote;
 import 'easiest/easiest_super_remote_main.dart' as easiest_super_remote;
+import 'easy/easy_codegen_main.dart' as easy_gen;
+import 'easy/easy_main.dart' as easy;
+import 'easy/easy_remote_main.dart' as easy_remote;
 import 'flutter_localizations/fl_main.dart' as fl;
 
 enum Package {

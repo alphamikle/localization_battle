@@ -1,9 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:easy_localization_loader/easy_localization_loader.dart';
-import 'package:el_comparison/easy/easy_localization.dart';
-import 'package:el_comparison/flutter_localizations/fl_main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'easy_localization.dart';
 
 Future<void> main() async {
   await EasyLocalization.ensureInitialized();

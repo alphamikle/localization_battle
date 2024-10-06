@@ -79,7 +79,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
 /// The translations for English, as used in Canada (`en_CA`).
 class AppLocalizationsEnCa extends AppLocalizationsEn {
-  AppLocalizationsEnCa(): super('en_CA');
+  AppLocalizationsEnCa() : super('en_CA');
 
   @override
   String get source => 'Flutter Localizations';
