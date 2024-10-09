@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:localization/localization.dart';
 
-late final List<CDNSource> remoteSources;
+late final List<RemoteSource> remoteSources;
 
-late final List<LocalizationProvider<LocalizationMessages>> remoteProviders = [
-  CDNLocalizationProvider<LocalizationMessages>(
+final List<LocalizationProvider<LocalizationMessages>> remoteProviders = [
+  RemoteLocalizationProvider<LocalizationMessages>(
     sources: remoteSources,
-    factory: (CDNSource source, Json content) => LocalizationMessages.fromJson(content),
+    factory: (RemoteSource source, Json content) => LocalizationMessages.fromJson(content),
   ),
 ];
 

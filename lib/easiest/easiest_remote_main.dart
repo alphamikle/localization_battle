@@ -1,8 +1,8 @@
 import 'package:easiest_localization/easiest_localization.dart';
 import 'package:easiest_remote_localization/easiest_remote_localization.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:intl/intl.dart';
 import 'package:localization/localization.dart';
 
 Future<void> main() async {
@@ -19,31 +19,58 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  /// Create remote providers - as many, as you want. But usually, you will need only one
   late final List<LocalizationProvider<LocalizationMessages>> remoteProviders = [
-    CDNLocalizationProvider<LocalizationMessages>(
+    // RemoteLocalizationProvider.raw(
+    //   service: RemoteLocalizationService(
+    //     Dio(
+    //       BaseOptions(/*...*/),
+    //     ),
+    //   ),
+    //   sources: <RemoteSource>[],
+    //   factory: (RemoteSource source, Json content) => LocalizationMessages.fromJson(content),
+    //   supportedLocales: <Locale>[],
+    //   sharedPreferences: SharedPreferences.instance,
+    //   cacheTTL: const Duration(hours: 3),
+    // ),
+    RemoteLocalizationProvider<LocalizationMessages>(
+      /// Set the cache duration
+      /// During this time, the user will use the previously downloaded content
+      cacheTTL: const Duration(hours: 3),
+
+      /// If necessary - you can configure in detail how exactly the network request will be executed with Dio' BaseOptions
+      options: BaseOptions(),
       sources: [
-        CDNSource(
+        /// Describe the “sources” for each of the supported languages
+        ///
+        /// Hint - since “source” is a very simple dataclass, it is quite easy to implement getting the sources themselves completely remotely.
+        /// This way you can change not only the content of already supported languages, but also add new languages dynamically.
+        RemoteSource(
           locale: Locale('en'),
-          path: 'https://indieloper.b-cdn.net/easiest_localization/en.json',
+          url: 'https://indieloper.b-cdn.net/easiest_localization/en.json',
           type: SourceType.json,
         ),
-        CDNSource(
+        RemoteSource(
           locale: Locale('en', 'CA'),
-          path: 'https://indieloper.b-cdn.net/easiest_localization/en_CA.json',
+          url: 'https://indieloper.b-cdn.net/easiest_localization/en_CA.json',
           type: SourceType.json,
         ),
-        CDNSource(
+        RemoteSource(
           locale: Locale('es'),
-          path: 'https://indieloper.b-cdn.net/easiest_localization/es.json',
+          url: 'https://indieloper.b-cdn.net/easiest_localization/es.json',
           type: SourceType.json,
         ),
-        CDNSource(
+        RemoteSource(
           locale: Locale('ru'),
-          path: 'https://indieloper.b-cdn.net/easiest_localization/ru.json',
+          url: 'https://indieloper.b-cdn.net/easiest_localization/ru.json',
           type: SourceType.json,
         ),
       ],
-      factory: (CDNSource source, Json content) => LocalizationMessages.fromJson(content),
+
+      /// Specify factory `.fromJson` from the generated class with localized content
+      /// If you have not changed the settings, this line will look exactly the same
+      /// If you have changed the `class_name` parameter - this will be `<class_name>.fromJson`
+      factory: (RemoteSource source, Json content) => LocalizationMessages.fromJson(content),
     ),
   ];
 
@@ -57,7 +84,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateTitle: (BuildContext context) => el.appTitle,
+
+      /// Use localizationsDelegatesWithProviders(remoteProviders) instead of localizationsDelegates
       localizationsDelegates: localizationsDelegatesWithProviders(remoteProviders),
+
+      /// And finally - use supportedLocalesWithProviders(remoteProviders) instead of supportedLocales
       supportedLocales: supportedLocalesWithProviders(remoteProviders),
       locale: localeOverride,
       home: Home(
