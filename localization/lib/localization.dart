@@ -2,17 +2,21 @@
 
 // ignore_for_file: type=lint
 
-import 'dart:developer';
+import 'dart:developer' show log;
 
-import 'package:easiest_localization/easiest_localization.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:intl/intl.dart';
+import 'package:easiest_localization/easiest_localization.dart' show LocalizationProvider;
+import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:flutter/widgets.dart' show BuildContext, Locale, Localizations, LocalizationsDelegate;
+import 'package:flutter_localizations/flutter_localizations.dart' show GlobalMaterialLocalizations;
+import 'package:intl/intl.dart' show Intl;
 
 final RegExp _variableRegExp = RegExp(r'\$\{[^}]+\} ?');
 
 typedef Checker<T> = bool Function(T value);
+
+const String localizationPackageVersion = r'1.0.0';
+
+const String? localizationVersion = null;
 
 enum Gender {
   male,

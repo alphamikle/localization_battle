@@ -18,10 +18,8 @@ dependencies:
     sdk: flutter
 
   # @ Easiest localization
-  easiest_localization:
-    path: ../locy
-  easiest_remote_localization:
-    path: ../el_localizely
+  easiest_localization: ^2.0.0
+  easiest_remote_localization: ^1.0.0
   localization:
     path: ./localization
 
@@ -56,9 +54,9 @@ easiest_localization:
     - "remote_localizations.json"
   class_name: LocalizationMessages
   description: Generated localization package
-  easiest_localization_version: "\n    path: ../../locy"
   package_name: localization
   package_path: './'
   primary_localization: "en"
   format_output: true
   save_merged_files: true
+  watch: true

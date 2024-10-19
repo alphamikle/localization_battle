@@ -145,16 +145,18 @@ packages:
   easiest_localization:
     dependency: "direct main"
     description:
-      path: "../locy"
-      relative: true
-    source: path
+      name: easiest_localization
+      sha256: "35e72620a3917b52e78745c7dfeecdd6a883172b33ebb1af0ceda83a8c0c6ce3"
+      url: "https://pub.dev"
+    source: hosted
     version: "2.0.0"
   easiest_remote_localization:
     dependency: "direct main"
     description:
-      path: "../el_localizely"
-      relative: true
-    source: path
+      name: easiest_remote_localization
+      sha256: "10c0cfad0ad1d8e49db25e0a30064eb3f67e96330bf3662115a26db8c4911cc4"
+      url: "https://pub.dev"
+    source: hosted
     version: "1.0.0"
   easy_localization:
     dependency: "direct main"

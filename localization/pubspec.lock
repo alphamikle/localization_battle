@@ -89,10 +89,11 @@ packages:
   easiest_localization:
     dependency: "direct main"
     description:
-      path: "../../locy"
-      relative: true
-    source: path
-    version: "2.0.0-beta"
+      name: easiest_localization
+      sha256: "35e72620a3917b52e78745c7dfeecdd6a883172b33ebb1af0ceda83a8c0c6ce3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   file:
     dependency: transitive
     description:
@@ -120,7 +121,7 @@ packages:
     source: hosted
     version: "2.1.2"
   intl:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: intl
       sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
@@ -244,5 +245,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
+  yaml_writer:
+    dependency: transitive
+    description:
+      name: yaml_writer
+      sha256: f182931a598f9a3fd29ff528f0caab98fffa713583e30c12c7a27ce0b66c1308
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
 sdks:
   dart: ">=3.5.0 <4.0.0"

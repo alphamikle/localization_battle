@@ -1,4 +1,4 @@
-import 'package:easiest_localization/easiest_localization.dart';
+import 'package:easiest_localization/easiest_localization.dart' show LocalizationProvider;
 import 'package:easiest_remote_localization/easiest_remote_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
