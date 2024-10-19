@@ -19,7 +19,7 @@ dependencies:
 
   # @ Easiest localization
   easiest_localization: ^2.0.0
-  easiest_remote_localization: ^1.0.0
+  easiest_remote_localization: ^1.0.1
   localization:
     path: ./localization
 
