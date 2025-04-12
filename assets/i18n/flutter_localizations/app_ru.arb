@@ -3,13 +3,6 @@
   "source": "Flutter Localizations",
   "appTitle": "Библиотека",
   "language": "Язык: {language}",
-  "@language": {
-    "placeholders": {
-      "language": {
-        "type": "String"
-      }
-    }
-  },
   "mainScreenGreetings": "Привет, {username}!",
   "@mainScreenGreetings": {
     "placeholders": {
@@ -23,7 +16,7 @@
   "@mainScreenBooksAmountOfNew": {
     "placeholders": {
       "howMany": {
-        "type": "int"
+        "type": "num"
       }
     }
   },

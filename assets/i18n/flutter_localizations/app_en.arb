@@ -2,10 +2,13 @@
   "@@locale": "en",
   "source": "Flutter Localizations",
   "appTitle": "Library App",
-  "language": "Lang: {language}",
+  "language": "Lang: {language}; Date: {country}",
   "@language": {
     "placeholders": {
       "language": {
+        "type": "String"
+      },
+      "country": {
         "type": "String"
       }
     }
@@ -18,12 +21,13 @@
       }
     }
   },
+  "name_space": "Privet",
   "mainScreenBooksAdd": "Add Book",
   "mainScreenBooksAmountOfNew": "{howMany, plural, zero{There are no new books available at the moment :(} one{There is {howMany} new book available :)} other{There are {howMany} new books available :)}}",
   "@mainScreenBooksAmountOfNew": {
     "placeholders": {
       "howMany": {
-        "type": "int"
+        "type": "num"
       }
     }
   },

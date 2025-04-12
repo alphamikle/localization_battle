@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'flutter_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15,7 +15,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get appTitle => 'Библиотека';
 
   @override
-  String language({required String language, required Object country}) {
+  String language({required String language, required String country}) {
     return 'Язык: $language';
   }
 
@@ -25,10 +25,13 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get name_space => 'Privet';
+
+  @override
   String get mainScreenBooksAdd => 'Добавить книгу';
 
   @override
-  String mainScreenBooksAmountOfNew({required int howMany}) {
+  String mainScreenBooksAmountOfNew({required num howMany}) {
     String _temp0 = intl.Intl.pluralLogic(
       howMany,
       locale: localeName,
@@ -46,8 +49,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get mainScreenBooksTodayDateFormat => 'dd MMM yyyy';
 
   @override
-  String get mainScreenBooksWelcome =>
-      '# Добро пожаловать в нашу библиотеку!\n---\n## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.';
+  String get mainScreenBooksWelcome => '# Добро пожаловать в нашу библиотеку!\n---\n## Мы очень рады вас видеть и хотели бы, чтобы вы получали удовольствие от чтения наших книг.';
 
   @override
   String author({required String name, required String gender}) {

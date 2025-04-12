@@ -2,17 +2,7 @@
   "@@locale": "en_CA",
   "source": "Flutter Localizations",
   "appTitle": "Library App",
-  "language": "Lang: ${language}; Country: ${country}",
-  "@language": {
-    "placeholders": {
-      "language": {
-        "type": "String"
-      },
-      "country": {
-        "type": "String"
-      }
-    }
-  },
+  "language": "Lang: {language}; Country: {country}",
   "mainScreenGreetings": "Hello, {username}",
   "@mainScreenGreetings": {
     "placeholders": {
@@ -26,7 +16,7 @@
   "@mainScreenBooksAmountOfNew": {
     "placeholders": {
       "howMany": {
-        "type": "int"
+        "type": "num"
       }
     }
   },

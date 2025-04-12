@@ -108,14 +108,20 @@ abstract class AppLocalizations {
   /// No description provided for @language.
   ///
   /// In en, this message translates to:
-  /// **'Lang: {language}'**
-  String language({required String language, required Object country});
+  /// **'Lang: {language}; Date: {country}'**
+  String language({required String language, required String country});
 
   /// No description provided for @mainScreenGreetings.
   ///
   /// In en, this message translates to:
   /// **'Hello, {username}'**
   String mainScreenGreetings({required String username});
+
+  /// No description provided for @name_space.
+  ///
+  /// In en, this message translates to:
+  /// **'Privet'**
+  String get name_space;
 
   /// No description provided for @mainScreenBooksAdd.
   ///
@@ -127,7 +133,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'{howMany, plural, zero{There are no new books available at the moment :(} one{There is {howMany} new book available :)} other{There are {howMany} new books available :)}}'**
-  String mainScreenBooksAmountOfNew({required int howMany});
+  String mainScreenBooksAmountOfNew({required num howMany});
 
   /// No description provided for @mainScreenBooksTodayDateFormat.
   ///

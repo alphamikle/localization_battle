@@ -3,13 +3,6 @@
   "source": "Flutter Localizations",
   "appTitle": "Aplicación de Biblioteca",
   "language": "Idioma: {language}",
-  "@language": {
-    "placeholders": {
-      "language": {
-        "type": "String"
-      }
-    }
-  },
   "mainScreenGreetings": "¡Hola, {username}!",
   "@mainScreenGreetings": {
     "placeholders": {
@@ -23,7 +16,7 @@
   "@mainScreenBooksAmountOfNew": {
     "placeholders": {
       "howMany": {
-        "type": "int"
+        "type": "num"
       }
     }
   },

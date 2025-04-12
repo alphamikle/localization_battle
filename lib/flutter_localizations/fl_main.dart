@@ -128,6 +128,11 @@ class HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final String appTitle = AppLocalizations.of(context)!.appTitle;
+    final String language = AppLocalizations.of(context)!.language(language: 'en', country: 'CA');
+
+    print(language + appTitle);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,

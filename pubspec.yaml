@@ -9,22 +9,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_markdown: ^0.7.3+2
+  flutter_markdown: ^0.7.7
   intl: ^0.19.0
-  dio: ^5.7.0
+  dio: ^5.8.0+1
 
   # @ "Default localization approach"
   flutter_localizations:
     sdk: flutter
 
   # @ Easiest localization
-  easiest_localization: ^2.0.1
-  easiest_remote_localization: ^1.0.3
+  easiest_localization: ^2.1.2
+  easiest_remote_localization: ^1.0.4
   localization:
     path: ./localization
 
   # @ Easy localization
-  easy_localization: ^3.0.7
+  easy_localization: ^3.0.7+1
   easy_localization_loader: ^2.0.2
 
 dev_dependencies:
@@ -60,3 +60,6 @@ easiest_localization:
   format_output: true
   save_merged_files: true
   watch: true
+
+flutter_intl:
+  enabled: true

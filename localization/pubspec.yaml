@@ -15,4 +15,4 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  easiest_localization:  ^2.0.0
+  easiest_localization: ^2.1.2

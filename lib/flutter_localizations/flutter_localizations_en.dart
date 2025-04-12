@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'flutter_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15,8 +15,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Library App';
 
   @override
-  String language({required String language, required Object country}) {
-    return 'Lang: $language';
+  String language({required String language, required String country}) {
+    return 'Lang: $language; Date: $country';
   }
 
   @override
@@ -25,10 +25,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get name_space => 'Privet';
+
+  @override
   String get mainScreenBooksAdd => 'Add Book';
 
   @override
-  String mainScreenBooksAmountOfNew({required int howMany}) {
+  String mainScreenBooksAmountOfNew({required num howMany}) {
     String _temp0 = intl.Intl.pluralLogic(
       howMany,
       locale: localeName,
@@ -79,7 +82,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
 /// The translations for English, as used in Canada (`en_CA`).
 class AppLocalizationsEnCa extends AppLocalizationsEn {
-  AppLocalizationsEnCa() : super('en_CA');
+  AppLocalizationsEnCa(): super('en_CA');
 
   @override
   String get source => 'Flutter Localizations';
@@ -88,8 +91,8 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   String get appTitle => 'Library App';
 
   @override
-  String language({required String language, required Object country}) {
-    return 'Lang: \$$language; Country: \$$country';
+  String language({required String language, required String country}) {
+    return 'Lang: $language; Country: $country';
   }
 
   @override
@@ -101,7 +104,7 @@ class AppLocalizationsEnCa extends AppLocalizationsEn {
   String get mainScreenBooksAdd => 'Add Book';
 
   @override
-  String mainScreenBooksAmountOfNew({required int howMany}) {
+  String mainScreenBooksAmountOfNew({required num howMany}) {
     String _temp0 = intl.Intl.pluralLogic(
       howMany,
       locale: localeName,
