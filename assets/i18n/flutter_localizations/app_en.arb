@@ -21,7 +21,7 @@
       }
     }
   },
-  "name_space": "Privet",
+  "name_space": "Hello",
   "mainScreenBooksAdd": "Add Book",
   "mainScreenBooksAmountOfNew": "{howMany, plural, zero{There are no new books available at the moment :(} one{There is {howMany} new book available :)} other{There are {howMany} new books available :)}}",
   "@mainScreenBooksAmountOfNew": {
@@ -48,3 +48,5 @@
   "employees3": "Emma Davis",
   "employees4": "William Taylor"
 }
+
+
